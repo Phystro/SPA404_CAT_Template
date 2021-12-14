@@ -1,0 +1,242 @@
+\documentclass[12pt, a4paper]{article}
+
+
+%%
+% These are the packages to be used in the code
+%%
+\usepackage[margin=2cm]{geometry}
+\usepackage{braket}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment the \date{} and put your own custom date 
+% Comment the \date{} to use the default date
+%\date{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add your name and title and Course/Class name
+% Kuna format tatu hapo, comment out yenye hutaki, uncomment out yenye unataka kutumia
+% Badilisha and ueke mbwembwe zako to each format ili zisifanane
+%
+% FORMAT 1
+%\author{Firstname Secondname Thirdname | I44/1234/2018}
+%\title{\small SPA 404: Fundamentals of Space Flight\\
+%	\large CAT}
+%
+% FORMAT 2
+%\author{Firstname Secondname Thirdname \\ \textbf{I44/1234/2018}}
+%\title{\small SPA 404: Fundamentals of Space Flight\\
+%	\large CAT}
+%
+% FORMAT 3
+\author{Firstname Secondname Thirdname}
+\title{SPA 404 Fundamentals of Space Flight CAT \\ I44/1234/2018}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	\maketitle
+	
+	% Specify your satellite name hapa
+	\textbf{Satellite: ANDIKA JINA LA SATELAITI YAKO HAPA}
+	
+	\section*{Question 1}
+	
+	\begin{enumerate}
+		% i
+		\item Make a table (using Lyx or Texstudio) of the Two-Line Element Set for your satellite
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%%% THE TABLE BEGINS HERE
+		\begin{table}[ht]
+			\centering
+			\caption{TWO LINE MEAN ELEMENT SET - SATELLITE NAME EKA PIA HAPA}
+			{\renewcommand{\arraystretch}{2}
+				\begin{tabular}[t]{|c|c|c|c|c|c|c|c|c|}
+					%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+					%% EKA VALUES ZA TAL YAKO KWA HIZO SPACES IN BETWEEN THE & SYMBOL
+					\hline
+					1	&	&	&	&	&	&	&	&	\\	% First rrow
+					\hline
+					2	&	&	&	&	&	&	&	&	\\	% Second row
+					\hline
+			\end{tabular}} \quad
+			\label{tab:caption}
+		\end{table}
+	%%% THE TABLE ENDS HERE
+		
+		
+		% ii
+		\item Make another table for six Keplerian elements table
+		\begin{table}[ht]
+			\centering
+			\caption{Six Keplerian Elements}
+			{\renewcommand{\arraystretch}{2}
+				\begin{tabular}[t]{|c|c|}
+					%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+					%% MJIJAZIE VALUES HAPO KWA COLUMN YA VALUE, IN BETWEEN THE & SYMBOL NA THE \\ SYMBOL
+					\hline
+					\textbf{Keplerian Element}  & \textbf{Value}\\
+					\hline
+					Semi major axis  & 0 km\\
+					\hline
+					Eccentricity & 0.0\\
+					\hline
+					True anomaly & 0.0$^\circ$\\
+					\hline
+					Inclination & 0.0$^\circ$\\
+					\hline
+					Right Ascension (longitude of the ascending node)  & 0.0$^\circ$\\
+					\hline
+					Argument of perigee  & 0.0$^\circ$\\
+					\hline
+			\end{tabular}} \quad
+			\label{tab:caption2}
+		\end{table}
+		
+		
+		
+		\pagebreak
+		% III
+		%%%%%%%%%%%%%%5
+		%%% KAMA KAWAIDA ONGEZA MBWE MBWE ZAKO HAPA ZISIFANANE
+		\item Derive and edit the equation of an ellipse
+		\\
+		\text{Let the ellipse be centered at the origin $(0, 0)$}\\
+		\text{Let the foci be on the x-axis at $(-c, 0)$ and $(c, 0)$.}\\
+		\text{The vertices are also on the x-axis at $(-a, 0)$ and $(a, 0)$.}\\
+		An ellipse is the set of all points $(x, y)$ such that the sum of all distances from $(x, y)$ to te foci is constant.\\
+		Let's define:
+		\begin{align*}
+			d_1 &= \text{distance from} \; (-c, 0) \; \text{to} \; (x, y)\\
+			d_2 &= \text{distance from} \; (c, 0) \; \text{to} \; (x, y)
+		\end{align*}
+		We can allow $(x, y)$ to be on the x-axis to help us get the constant. Thus, $d_1$ is the distance between $(-c, 0)$ and $(a, 0)$ while $d_2$ is distance between $(c, 0)$ and $(a, 0)$.
+		\begin{align*}
+			d_1 &= \sqrt{(a - -c)^2 + (0 - 0)^2} = \sqrt{(a + c)^2} = a + c\\
+			d_2 &= \sqrt{(a - c)^2 + (0-0)^2} = \sqrt{(a - c)^2} = a - c\\
+			\therefore d_1 + d_2 &= 2a
+		\end{align*}
+		Finding expressions for $d_1$ and $d_2$. Using the distance formula:
+		\begin{align*}
+			d_1 + d_2 &= \Big( \sqrt{(x - -c)^2 + (y - 0)^2} \Big) + \Big( \sqrt{(x - c)^2 + (y-0)^2} \Big) = 2a
+		\end{align*}
+		\begin{align*}
+			2a &= \Big( \sqrt{(x +c)^2 + y^2} \Big) + \Big( \sqrt{(x - c)^2 + y^2} \Big) \\
+			\sqrt{(x +c)^2 + y^2} &= 2a - \sqrt{(x - c)^2 + y^2}\\
+			(x + c)^2 + y^2 &= \Big[2a -  \sqrt{(x - c)^2 + y^2} \Big]^2\\
+			\text{expanding the squares}\\
+			x^2 + c^2 + 2xc + y^2 &= 4a^2 - 4a\sqrt{(x - c)^2 + y^2}  + y^2 + x^2 + c^2 - 2xc\\
+			4xc &= 4a^2 - 4a\sqrt{(x - c)^2 + y^2}\\
+			4(xc - a^2) &= 4a\sqrt{(x - c)^2 + y^2}\\
+			xc - a^2 &= a\sqrt{(x - c)^2 + y^2}\\
+			\Big[xc - a^2\Big]^2 &= \Big[a\sqrt{(x - c)^2 + y^2}\Big]^2\\
+			x^2c^2 + a^4 - 2xca^2 &= a^2(y^2 + x^2 + c^2 - 2xc)\\
+			x^2c^2 + a^4 - 2xca^2 &= a^2y^2 + a^2x^2 + a^2c^2 - 2xca^2\\
+			x^2c^2 - a^2x^2 &= a^2y^2 + a^2c^2 - a^4\\
+			x^2(c^2 - a^2) &= a^2y^2 + a^2(c^2 - a^2)\\
+			x^2(c^2 - a^2)  - a^2(c^2 - a^2) &= a^2y^2 \\
+			(x^2 - a^2)(c^2 - a^2) &=  a^2y^2\\
+			\text{Set a new variable: $b^2 = a^2 - c^2$}\\
+			-(x^2 - a^2)b^2 &= a^2y^2\\
+			-x^2b^2 + a^2b^2 &= a^2y^2\\
+			x^2b^2 + a^2y^2 &= a^2b^2\\
+			\frac{x^2}{a^2} + \frac{y^2}{b^2} &= 1
+		\end{align*}
+		Therefore, equation of an ellipse centered around the origin is:
+		\begin{align}
+			\frac{x^2}{a^2} + \frac{y^2}{b^2} &= 1
+		\end{align}
+	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% PIA UNAWEZA UNCOMMENT HII HAPA UITUMIE FOR EQUATION FOAN ELLIPSE BADALA YA HIYO YENYE IKO HAPO JUU
+%%%%%% JUST AS AN ALTERNATIVE - YOUR CHOICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\text{Equation of an ellipse}\\\\
+%	\begin{array}
+%		{ll}\text{ }{d}{1}+{d}{2}=\sqrt{{\left(x-\left(-c\right)\right)}^{2}+{\left(y - 0\right)}^{2}}+\sqrt{{\left(x-c\right)}^{2}+{\left(y - 0\right)}^{2}}=2a\hfill & \text{Distance formula}\hfill \\ \sqrt{{\left(x+c\right)}^{2}+{y}^{2}}+\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}=2a\hfill & \text{Simplify expressions}\text{.}\hfill \\ \text{ }\sqrt{{\left(x+c\right)}^{2}+{y}^{2}}=2a-\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}\hfill & \text{Move radical to opposite side}\text{.}\hfill \\ \text{ }{\left(x+c\right)}^{2}+{y}^{2}={\left[2a-\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}\right]}^{2}\hfill & \text{Square both sides}\text{.}\hfill \\ \text{ }{x}^{2}+2cx+{c}^{2}+{y}^{2}=4{a}^{2}-4a\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}+{\left(x-c\right)}^{2}+{y}^{2}\hfill & \text{Expand the squares}\text{.}\hfill \\ \text{ }{x}^{2}+2cx+{c}^{2}+{y}^{2}=4{a}^{2}-4a\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}+{x}^{2}-2cx+{c}^{2}+{y}^{2}\hfill & \text{Expand remaining squares}\text{.}\hfill \\ \text{ }2cx=4{a}^{2}-4a\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}-2cx\hfill & \text{Combine like terms}\text{.}\hfill \\ \text{ }4cx - 4{a}^{2}=-4a\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}\hfill & \text{Isolate the radical}\text{.}\hfill \\ \text{ }cx-{a}^{2}=-a\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}\hfill & \text{Divide by 4}\text{.}\hfill \\ \text{ }{\left[cx-{a}^{2}\right]}^{2}={a}^{2}{\left[\sqrt{{\left(x-c\right)}^{2}+{y}^{2}}\right]}^{2}\hfill & \text{Square both sides}\text{.}\hfill \\ \text{ }{c}^{2}{x}^{2}-2{a}^{2}cx+{a}^{4}={a}^{2}\left({x}^{2}-2cx+{c}^{2}+{y}^{2}\right)\hfill & \text{Expand the squares}\text{.}\hfill \\ \text{ }{c}^{2}{x}^{2}-2{a}^{2}cx+{a}^{4}={a}^{2}{x}^{2}-2{a}^{2}cx+{a}^{2}{c}^{2}+{a}^{2}{y}^{2}\hfill & \text{Distribute }{a}^{2}.\hfill \\ \text{ }{a}^{2}{x}^{2}-{c}^{2}{x}^{2}+{a}^{2}{y}^{2}={a}^{4}-{a}^{2}{c}^{2}\hfill & \text{Rewrite}\text{.}\hfill \\ \text{ }{x}^{2}\left({a}^{2}-{c}^{2}\right)+{a}^{2}{y}^{2}={a}^{2}\left({a}^{2}-{c}^{2}\right)\hfill & \text{Factor common terms}\text{.}\hfill \\ \text{ }{x}^{2}{b}^{2}+{a}^{2}{y}^{2}={a}^{2}{b}^{2}\hfill & \text{Set }{b}^{2}={a}^{2}-{c}^{2}.\hfill \\ \text{ }\frac{{x}^{2}{b}^{2}}{{a}^{2}{b}^{2}}+\frac{{a}^{2}{y}^{2}}{{a}^{2}{b}^{2}}=\frac{{a}^{2}{b}^{2}}{{a}^{2}{b}^{2}}\hfill & \text{Divide both sides by }{a}^{2}{b}^{2}.\hfill \\ \text{ }\frac{{x}^{2}}{{a}^{2}}+\frac{{y}^{2}}{{b}^{2}}=1\hfill & \text{Simplify}\text{.}\hfill
+%	\end{array}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		% iv
+		\item Derive the orbital equation for your satellite
+		
+		
+		
+		% v
+		\item Draw the satellite orbit using latex
+		\tikz \draw (0,0) ellipse (1cm and 1cm);
+		
+		
+	\end{enumerate}
+	
+	
+	\pagebreak
+	\section*{Question 2}
+	\paragraph*{Add a table in your Latex document with the following details}
+	
+	\begin{table}[ht]
+		\centering
+		\caption{SATELLITE NAME HAPA}
+		{\renewcommand{\arraystretch}{2}
+			\begin{tabular}{|m{0.01\linewidth}|m{0.35\linewidth}|m{0.55\linewidth}|} % {|c|c|c|} 
+				%% BY NOW USHAJU AVENYE KUNAENDA NA HIZI TABLES
+				\hline
+				a. & Country of Operator/Owner & Githurai \\
+				\hline
+				b. & Users/Purpose & chiromo \\
+				\hline
+				c. & Class of Orbit &  chiromo \\
+				\hline
+				d. & Type of Orbit & chiromo \\
+				\hline
+				e. & Perigee (km) & 0.0 km \\
+				\hline
+				f. & Apogee (km) & 0.0 km \\
+				\hline
+				g. & Eccentricity & 0.0 \\
+				\hline
+				h. & Inclination ($^\circ$) &0.0$^\circ$ \\
+				\hline
+				i. & Period (minutes) & 0.0 minutes\\
+				\hline
+				j. & Launch Mass (kg) & 0 kg \\
+				\hline
+				k. & Date of Launch & 0$^{th}$ December, 0000\\
+				\hline
+				l. & Expected Lifetime (yrs.) & 0 yrs\\
+				\hline
+				m. & Launch Site & chiromo  \\
+				\hline
+				n. & Launch Vehicle &  	Mat za Rongai \\
+				\hline
+				o. & COSPAR Number & 0-0\\
+				\hline
+				p. & NORAD Number 4 & 0 \\
+				\hline
+		\end{tabular}}
+	\end{table}
+	
+	
+	
+	\pagebreak
+	\section*{Question 3}
+	\paragraph*{Print your report including the Latex code from either Texstudio or overleaf and hand your report via google classroom}
+	
+	
+	
+\end{document}
