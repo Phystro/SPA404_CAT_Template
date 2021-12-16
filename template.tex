@@ -173,13 +173,65 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		
 		% iv
+		\pagebreak
 		\item Derive the orbital equation for your satellite
-		
+		\text{Using the equation of motion for the two-body problem}
+		\begin{align*}
+			\mathbf{\ddot{r}} + \frac{\mu}{r^3} \mathbf{\vec{r}} &= 0
+		\end{align*}
+		Where:
+		\begin{align*}
+			\mu & \equiv GM\\
+			\mathbf{\vec{r}} &= \text{seperation displacement between the Earth and the satellite}
+		\end{align*}
+		Cross product with the angular momentum, $\mathbf{\vec{L}}$
+		\begin{align*}
+			\mathbf{\ddot{r}} \times \mathbf{\vec{L}}&= \frac{\mu}{r^3}\\
+			\text{Setting the equation as:}\\
+			\frac{\mu}{r^3}(\mathbf{\vec{L}} \times \mathbf{\vec{r}}) &= \frac{\mu}{r^3} \equiv \frac{\mu}{r}\mathbf{\vec{v}} - \frac{\mu}{r^2}\dot{r}\mathbf{\vec{r}}
+		\end{align*}
+		Note that the derivative of the unit vector is:
+		\begin{align*}
+			\mu\frac{d}{dt}\Big(\frac{\mathbf{\vec{r}}}{r}\Big) &= \frac{\mu}{r}\mathbf{\vec{v}} - \frac{\mu}{r^2}\dot{r}\mathbf{\vec{r}}
+		\end{align*}
+		Allowing us to rewrite:
+		\begin{align*}
+			\frac{d}{dt}( \mathbf{\dot{r}} \times \mathbf{\vec{L}} ) &= \mu \frac{d}{dt}\Big(\frac{\mathbf{\vec{r}}}{r}\Big)\\
+			\text{Integrating:}\\
+			\mathbf{\dot{r}} \times \mathbf{\vec{L}}  &= \mu \frac{\mathbf{\vec{r}}}{r}+ \mathbf{B}\\
+			\text{Using dot product:}\\
+			\mathbf{\vec{r}} \cdot \mathbf{\dot{r}} \times \mathbf{\vec{L}}  &= \mathbf{\vec{r}} \cdot \mu \frac{\mathbf{\vec{r}}}{r}+ \mathbf{\vec{r}} \cdot \mathbf{B}
+		\end{align*}
+		Since in general:
+		\begin{align*}
+			\vec{v} \cdot \vec{w} \times \vec{z} &= \vec{v} \times \vec{w} \cdot \vec{z}\\
+			\text{and;}&\\
+			\vec{b} \cdot \vec{b} &= b^2
+		\end{align*}
+		Thus:
+		\begin{align*}
+			\mathbf{\vec{r}} \times \mathbf{\dot{r}} \cdot \mathbf{\vec{L}}  &= \mu \frac{1}{r} \mathbf{\vec{r}} \cdot \mathbf{\vec{r}} + \mathbf{\vec{r}} \cdot \mathbf{B}\\
+			\mathbf{\vec{L}} \cdot \mathbf{\vec{L}}  &= \mu \frac{1}{r} (r^2) + rB \cos \theta\\
+			L^2 &= \frac{\mu}{r} + rB \cos \theta	
+		\end{align*}
+		Solving for r, we get the orbital equation;
+		\begin{align*}
+			r &= \frac{L^2}{\mu} \frac{1}{1 - (B/\mu) \cos \theta}
+		\end{align*}
+		where: 
+		\begin{align*}
+			\theta &= \text{the true anomaly} (\nu)
+		\end{align*}
+		In full form, the orbital equation is written as:
+		\begin{align}
+			r = \frac{L^2}{m^2\mu} \frac{1}{1 - e \cos \nu}
+		\end{align}
 		
 		
 		% v
-		\item Draw the satellite orbit using latex
-		\tikz \draw (0,0) ellipse (1cm and 1cm);
+		\pagebreak
+		\item Draw the satellite orbit using latex\\\\\\
+		\tikz \draw (0,0) ellipse (60mm and 120mm);
 		
 		
 	\end{enumerate}
